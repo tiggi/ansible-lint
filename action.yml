@@ -66,7 +66,7 @@ runs:
       # SETUPTOOLS_SCM_PRETEND_VERSION=${{ github.action_ref || 'main' }}
       run: |
         cd $GITHUB_ACTION_PATH
-        pip install "ansible-lint[lock] @ git+https://github.com/ansible/ansible-lint@$GH_ACTION_REF"
+        pip --user install "ansible-lint[lock] @ git+https://github.com/ansible/ansible-lint@$GH_ACTION_REF"
         ansible-lint --version
 
     - name: Install role and collection dependencies from requirements file
